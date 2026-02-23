@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio - Mohammad Mahdi Mohammadi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg: #050816;
+            --bg-alt: #0b1020;
+            --card: #111827;
+            --accent: #22d3ee;
+            --accent-soft: rgba(34, 211, 238, 0.15);
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+        }
+
+        body {
+            background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+            color: var(--text);
+            font-family: system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(8,47,73,0.95));
+            border-radius: 1.5rem;
+            border: 1px solid rgba(148,163,184,0.3);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+            position: sticky;
+            top: 0.75rem;
+            backdrop-filter: blur(18px);
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 999px;
+            border: 2px solid var(--accent);
+            padding: 3px;
+            background: radial-gradient(circle at 30% 0, #22d3ee, #0f172a);
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 999px;
+            object-fit: cover;
+        }
+
+        .title-block h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .title-block h2 {
+            font-size: 0.95rem;
+            color: var(--muted);
+            margin-top: 0.25rem;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+        }
+
+        .chip {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.4);
+            color: var(--muted);
+        }
+
+        .btn-primary {
+            padding: 0.55rem 1.2rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+            color: #020617;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        main { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1.75rem; }
+
+        section {
+            background: radial-gradient(circle at top left, rgba(34,211,238,0.08), rgba(15,23,42,0.95));
+            border-radius: 1.25rem;
+            padding: 1.4rem 1.5rem;
+            border: 1px solid rgba(31,41,55,0.9);
+            box-shadow: 0 18px 45px rgba(0,0,0,0.55);
+        }
+
+        .skills-grid, .projects-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .skills-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+        .projects-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+        .skill-pill, .tag {
+            padding: 0.5rem 0.7rem;
+            border-radius: 0.9rem;
+            background: rgba(15,23,42,0.9);
+            border: 1px solid rgba(55,65,81,0.9);
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .project-card {
+            background: rgba(15,23,42,0.95);
+            border-radius: 1rem;
+            padding: 1rem;
+            border: 1px solid rgba(55,65,81,0.9);
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: #4b5563;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <header>
+        <div class="profile">
+            <div class="avatar">
+                <img src="https://avatars.githubusercontent.com/u/247939334?v=4">
+            </div>
+            <div class="title-block">
+                <h1>Mohammad Mahdi Mohammadi</h1>
+                <h2>Python Developer • Telegram Bot & Automation Builder</h2>
+                <div class="chips">
+                    <span class="chip">Clean Architecture</span>
+                    <span class="chip">Security‑Focused</span>
+                    <span class="chip">Real‑World Tools</span>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Contact Me
+        </button>
+    </header>
+
+    <main>
+
+        <section id="about">
+            <h3>About Me</h3>
+            <p>
+                I'm <strong>Mohammad Mahdi Mohammadi</strong>, a Python developer focused on building
+                <strong>real‑world tools, Telegram bots, automation systems, and clean, minimal software</strong>.
+                I care deeply about security, project structure, and creating tools that are actually useful.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h3>Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-pill">Python</div>
+                <div class="skill-pill">Telegram Bot API</div>
+                <div class="skill-pill">Flask</div>
+                <div class="skill-pill">Automation Tools</div>
+                <div class="skill-pill">JSON Storage</div>
+                <div class="skill-pill">Git & GitHub</div>
+                <div class="skill-pill">Clean Architecture</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h3>Projects</h3>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <h4>AI Document Summarizer</h4>
+                    <p>A lightweight AI-powered document summarizer with a modular Python structure.</p>
+                    <a href="https://github.com/bluelifemmd2007-cell/ai-document-summarizer" target="_blank">View on GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <h4>MMD TODO Bot</h4>
+                    <p>A clean and simple Telegram TODO bot built under M‑M Projects.</p>
+                    <a href="https://github.com/bluelifemmd2007-cell/mmd_todo_bot" target="_blank">View on GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <h4>Instagram Web Downloader</h4>
+                    <p>A minimal Flask web app for downloading Instagram profile pictures.</p>
+                    <a href="https://github.com/bluelifemmd2007-cell/instagram-web" target="_blank">View on GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <h4>Modern Python Calculator</h4>
+                    <p>A modern calculator with a custom GUI design.</p>
+                    <a href="https://github.com/bluelifemmd2007-cell/Modern-Python-Calculator" target="_blank">View on GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <h4>Password Generator CLI</h4>
+                    <p>A powerful CLI tool for generating secure passwords.</p>
+                    <a href="https://github.com/bluelifemmd2007-cell/password-generator-cli" target="_blank">View on GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <h4>Smart File Organizer</h4>
+                    <p>Automatically organizes files into categorized folders.</p>
+                    <a href="https://github.com/bluelifemmd2007-cell/smart-file-organizer" target="_blank">View on GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <h4>Personal Expense Manager</h4>
+                    <p>A simple expense manager with JSON storage and filtering.</p>
+                    <a href="https://github.com/bluelifemmd2007-cell/personal-expense-manager" target="_blank">View on GitHub</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h3>Contact</h3>
+            <p>You can reach me directly via Telegram:</p>
+            <a href="https://t.me/MMD_MM10" target="_blank">@MMD_MM10</a>
+        </section>
+
+    </main>
+
+    <footer>
+        Built with attention to detail • Updated based on GitHub repositories
+    </footer>
+
+</div>
+</body>
+</html>
